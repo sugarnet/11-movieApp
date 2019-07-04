@@ -52,4 +52,11 @@ export class MoviesService {
 
     return this.http.jsonp(url,'JSONP_CALLBACK').pipe(map( data => data['results'] ));
   }
+
+  getPelicula( id: string ) {
+
+    let url = `${ this.url }/movie/${ id }?api_key=${ this.apiKey }&language=es&callback=JSONP_CALLBACK`;
+ 
+    return this.http.jsonp(url,'JSONP_CALLBACK').pipe(map( data => data ));
+  }
 }

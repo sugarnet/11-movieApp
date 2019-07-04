@@ -16,7 +16,10 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(data => {
-      console.log(data);
+      if( data['texto'] ) {
+        this.buscar = data['texto'];
+        this.buscarPelicula();
+      }
     });
   }
 

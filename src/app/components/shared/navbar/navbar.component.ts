@@ -16,7 +16,11 @@ export class NavbarComponent implements OnInit {
 
   buscarPelicula(texto: string) {
 
-    this.router.navigate(['buscar', texto]);
+    if( texto.length == 0 ) {
+      return;
+    }
+    
+    this.router.navigate(['search', texto]);
   }
 
 }

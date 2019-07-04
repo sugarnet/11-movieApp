@@ -21,7 +21,9 @@
           <div class="card-body">
             <h5 class="card-title">{{ pelicula.original_title }}</h5>
             <p class="card-text">{{ pelicula.overview | slice:0:250 }}...</p>
-            <button type="button" class="btn btn-outline-primary btn-block">
+            <button type="button" 
+                    class="btn btn-outline-primary btn-block"
+                    [routerLink]="['/movie', pelicula.id, 'search', buscar]">
               Ver más...
             </button>
           </div>
